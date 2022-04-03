@@ -1,0 +1,145 @@
+//
+// _menu.scss
+//
+@import "./_variables.scss";
+.metismenu {
+  padding: 0px !important;
+  margin: 0;
+
+  li {
+    display: block;
+    width: 100%;
+  }
+
+  .mm-collapse {
+    display: none;
+
+    &:not(.mm-show) {
+      display: none;
+    }
+
+    &.mm-show {
+      display: block;
+    }
+  }
+
+  .mm-collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition-timing-function: ease;
+    transition-duration: 0.35s;
+    transition-property: height, visibility;
+  }
+}
+
+.vertical-menu {
+  min-width: 300px;
+
+  max-width: 300px;
+  z-index: 1001;
+  background: $sidebar-bg;
+  bottom: 0;
+  margin-top: 0;
+  position: fixed;
+  top: 0px;
+  box-shadow: gray;
+}
+
+
+#sidebar-menu {
+  padding: 0 0 5px 0;
+
+  .mm-active {
+    > .has-arrow {
+      &:after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .has-arrow {
+    &:after {
+      content: "^";
+      display: block;
+      float: right;
+      transition: transform 0.2s;
+      font-size: 1rem;
+    }
+  }
+
+  ul {
+    li {
+      a {
+        display: block;
+        padding: 0.625rem 1.5rem;
+        color: black;
+        position: relative;
+        font-size: 16px;
+        transition: all 0.4s;
+        text-decoration: none;
+        border: 2px 0px solid rgb(196, 187, 187) ;
+       
+
+        &:hover {
+          color: $sidebar-menu-item-hover-color;
+        }
+      }
+
+      .badge {
+        margin-top: 4px;
+      }
+
+      ul.sub-menu {
+       
+
+        li {
+          a {
+            padding: 0.4rem 1.5rem 0.4rem 1.5rem;
+            font-size: 16px;
+            color: $sidebar-menu-sub-item-color;
+            text-decoration: none;
+          }
+
+          ul.sub-menu {
+
+            li {
+              a {
+                padding: 0.4rem 1.5rem 0.4rem 1.5rem;
+                font-size: 16px;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu-title {
+  padding: 12px 10px !important;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  cursor: default;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: $sidebar-menu-item-icon-color;
+  font-weight: $font-weight-semibold;
+}
+
+.mm-active {
+  color: $sidebar-menu-item-active-color !important;
+  font-size: 18px;
+  font-weight: 600;
+  > a {
+    color: $sidebar-menu-item-active-color !important;
+
+   font-size: 18px;
+   font-weight: 600;
+
+  }
+}
+.vertical-menu {
+      background-color: $primary;
+    }
